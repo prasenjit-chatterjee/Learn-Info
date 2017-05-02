@@ -1,0 +1,24 @@
+﻿<h3>List view</h3>
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th></th>
+            <th></th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="Prod in Products">
+            <td>{{Prod.id}}</td>
+            <td>{{Prod.name}}</td>
+            <td>{{Prod.description}}</td>
+            <td>{{Prod.quantity}}</td>
+            <td><button class="btn" type="button" data-ng-click="editProduct(Prod.id)">Edit</button></td>
+            <td><button class="btn" type="button" data-ng-click="deleteProduct(Prod.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

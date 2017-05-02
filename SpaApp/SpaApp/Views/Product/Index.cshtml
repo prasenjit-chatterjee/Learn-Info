@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+
+<div ng-view></div>
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/ProductModule.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/Services.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/ShowProductsController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/AddProductController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/EditProductController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/DeleteProductController.js")"></script>
+}
