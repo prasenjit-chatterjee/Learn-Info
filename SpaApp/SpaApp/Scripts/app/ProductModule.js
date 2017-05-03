@@ -1,41 +1,56 @@
-﻿var app = angular.module('ProductModule', ['ngRoute']);
+﻿var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb']);
 
 app.factory("ShareData", function () {
     return { value: 0 }
 });
 
-//Showing Routing  
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/',
+app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
+    $stateProvider.state('Home',
                         {
+                            url: '/',
                             templateUrl: 'Home/Home',
-                            controller: 'HomeController'
-                        });
-    $routeProvider.when('/ShowAll',
+                            controller: 'HomeController',
+                            ncyBreadcrumb: {
+                                label: 'Home',
+                            }
+                        }).state('ShowAllProducts',
                         {
+                            url: '/ShowAll',
                             templateUrl: 'Product/ShowAll',
-                            controller: 'ShowProductsController'
-                        });
-    $routeProvider.when('/Add',
+                            controller: 'ShowProductsController',
+                            ncyBreadcrumb: {
+                                label: 'Product List',
+                                parent: "Home"
+                            }
+                        }).state('AddProduct',
                         {
+                            url: '/Add',
                             templateUrl: 'Product/Add',
-                            controller: 'AddProductController'
-                        });
-    $routeProvider.when('/Edit',
+                            controller: 'AddProductController',
+                            ncyBreadcrumb: {
+                                label: 'Add a Product',
+                                parent: "Home"
+                            }
+                        }).state('EditProduct',
                         {
+                            url: '/Edit',
                             templateUrl: 'Product/Edit',
-                            controller: 'EditProductController'
-                        });
-    $routeProvider.when('/Delete',
+                            controller: 'EditProductController',
+                            ncyBreadcrumb: {
+                                label: 'Edit : {{Product.name|uppercase}}',
+                                parent: "ShowAllProducts"
+                            }
+                        }).state('DeleteProduct',
                         {
+                            url: '/Delete',
                             templateUrl: 'Product/Delete',
-                            controller: 'DeleteProductController'
+                            controller: 'DeleteProductController',
+                            ncyBreadcrumb: {
+                                label: 'Delete : {{Product.name|uppercase}}',
+                                parent: "ShowAllProducts"
+                            }
                         });
-    $routeProvider.otherwise(
-                        {
-                            redirectTo: '/'
-                        });
-
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    //$locationProvider.html5Mode(true).hashPrefix('!');
     $locationProvider.html5Mode({ enabled: true, requireBase: false });
-}]);
+    $urlRouterProvider.otherwise('/');
+});

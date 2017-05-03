@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <base href="/">
     <title>@ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
-    <script src="~/Scripts/app/ProductModule.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="~/Scripts/angular-breadcrumb.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -20,23 +22,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("House Hold Product Management", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("Product Management", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                         <li>@Html.ActionLink("Product", "Index", "Product", new { area = "" }, null)</li>
-                    </ul>
+                    </ul>*@
                 <ul class="nav navbar-nav">
                     <li><a href="Home"> Home </a></li>
-                    <li><a href="ShowAll"> Show All Products </a></li>
-                    <li><a href="Add"> Add Product </a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Product
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ShowAll">Product List</a></li>
+                            <li><a href="Add"> Add Product </a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
+        @Html.Partial("_BreadCrumb")
         @RenderBody()
         <hr />
         <footer>

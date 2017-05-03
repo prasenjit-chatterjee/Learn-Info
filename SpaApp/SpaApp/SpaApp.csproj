@@ -227,6 +227,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-breadcrumb.js" />
+    <Content Include="Scripts\angular-breadcrumb.min.js" />
     <Content Include="Scripts\app\AddProductController.js" />
     <Content Include="Scripts\app\DeleteProductController.js" />
     <Content Include="Scripts\app\EditProductController.js" />
@@ -295,6 +297,7 @@
     <Content Include="Views\Product\_Edit.cshtml" />
     <Content Include="Views\Product\_Delete.cshtml" />
     <Content Include="Views\Product\_Home.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
