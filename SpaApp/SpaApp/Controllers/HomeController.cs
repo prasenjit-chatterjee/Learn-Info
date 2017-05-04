@@ -16,5 +16,10 @@ namespace SpaApp.Controllers
         {
             return PartialView("_Home");
         }
+
+        public ActionResult Manage()
+        {
+            return PartialView("_Manage");
+        }
     }
 }

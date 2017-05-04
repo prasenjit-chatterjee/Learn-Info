@@ -12,16 +12,18 @@ app.controller("EditProductController", function ($scope, $location, ShareData, 
               });
     }
 
-    $scope.save = function () {
-        var Product = $scope.Product;
+    $scope.save = function (isValid) {
+        if (isValid) {
+            var Product = $scope.Product;
 
-        var promisePutProduct = ProductService.put(Product.id, Product);
-        promisePutProduct.then(function (pl) {
-            $location.path("/ShowAll");
-        },
-              function (errorPl) {
-                  $scope.error = 'failure loading Product', errorPl;
-              });
+            var promisePutProduct = ProductService.put(Product.id, Product);
+            promisePutProduct.then(function (pl) {
+                $location.path("/ShowAll");
+            },
+                  function (errorPl) {
+                      $scope.error = 'failure loading Product', errorPl;
+                  });
+        }
     };
 
 });

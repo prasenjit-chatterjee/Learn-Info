@@ -4,8 +4,10 @@
 
 @*<div ng-view></div>*@
 <div ui-view></div>
+@*<div ui-view="Test"></div>*@
 
 @section Scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app/ProductModel.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/app/ProductModule.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/app/Services.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/app/ShowProductsController.js")"></script>

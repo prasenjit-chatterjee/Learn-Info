@@ -1,23 +1,25 @@
 app.controller('AddProductController', function ($scope, ProductService) {
-    $scope.id = 0;
+    getProduct();
+    function getProduct() {
+        $scope.Product = Product;
+    }
 
-    $scope.save = function () {
-        var Product = {
-            Id: $scope.id,
-            Name: $scope.name,
-            Description: $scope.description,
-            Quantity: $scope.quantity
-        };
+    $scope.save = function (isValid) {
+        if (isValid) {
+            var Product = {
+                Name: $scope.Product.name,
+                Description: $scope.Product.description,
+                Quantity: $scope.Product.quantity
+            };
 
-        var promisePost = ProductService.post(Product);
+            var promisePost = ProductService.post(Product);
 
-        promisePost.then(function (pl) {
-            alert("Product Saved Successfully.");
-        },
-              function (errorPl) {
-                  $scope.error = 'failure loading Product', errorPl;
-              });
-
+            promisePost.then(function (pl) {
+                alert("Product Saved Successfully.");
+            },
+                  function (errorPl) {
+                      $scope.error = 'failure loading Product', errorPl;
+                  });
+        }
     };
-
 });

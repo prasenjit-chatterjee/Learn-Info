@@ -8,7 +8,11 @@ app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
     $stateProvider.state('Home',
                         {
                             url: '/',
-                            templateUrl: 'Home/Home',
+                            views: {
+                                '': { templateUrl: 'Home/Home' },
+                                //Tested multiple view in a controller
+                                //'Test': { templateUrl: 'Home/Manage' }
+                            },
                             controller: 'HomeController',
                             ncyBreadcrumb: {
                                 label: 'Home',

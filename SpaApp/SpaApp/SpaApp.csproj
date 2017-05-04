@@ -232,6 +232,7 @@
     <Content Include="Scripts\app\AddProductController.js" />
     <Content Include="Scripts\app\DeleteProductController.js" />
     <Content Include="Scripts\app\EditProductController.js" />
+    <Content Include="Scripts\app\ProductModel.js" />
     <Content Include="Scripts\app\ProductModule.js" />
     <Content Include="Scripts\app\Services.js" />
     <Content Include="Scripts\app\ShowProductsController.js" />

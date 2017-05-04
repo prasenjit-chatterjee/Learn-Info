@@ -1,25 +1,32 @@
 ﻿<h3>Add a New Product</h3>
-
-<div class="row">
-    <div class="col-md-6">
-        <label>Name:</label>
-        <input type="text" class="form-control" ng-model="name" />
+<form name="frmProduct" novalidate>
+    <div class="row">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : frmProduct.name.$invalid && !frmProduct.name.$pristine }">
+            <label>Name:</label>
+            <input type="text" class="form-control" ng-model="Product.name" name="name" required ng-maxlength="80"/>
+            <p ng-show="frmProduct.name.$error.required" class="help-block">{{Product.nameRequired}}</p>
+            <p ng-show="frmProduct.name.$error.maxlength" class="help-block">{{Product.nameMaxlength}}</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <label>Description:</label>
-        <textarea class="form-control" rows="4" ng-model="description"></textarea>
+    <div class="row">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : frmProduct.description.$invalid && !frmProduct.description.$pristine }">
+            <label>Description:</label>
+            <textarea class="form-control" rows="4" ng-model="Product.description" name="description" ng-maxlength="80"></textarea>
+            <p ng-show="frmProduct.description.$error.maxlength" class="help-block">{{Product.descriptionMaxlength}}</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <label>Quantity:</label>
-        <input type="number" class="form-control" ng-model="quantity" />
+    <div class="row">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : frmProduct.quantity.$invalid && !frmProduct.quantity.$pristine }">
+            <label>Quantity:</label>
+            <input type="number" class="form-control" ng-model="Product.quantity" name="quantity" required min="1" max="5000"/>
+            <p ng-show="frmProduct.quantity.$error.required" class="help-block">{{Product.quantityMin}}</p>
+            <p ng-show="frmProduct.quantity.$error.min" class="help-block">{{Product.quantityMin}}</p>
+            <p ng-show="frmProduct.quantity.$error.max" class="help-block">{{Product.quantityMax}}</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <input type="button" value="Save" class="btn" data-ng-click="save()" />
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <input type="button" value="Save" class="btn" data-ng-click="save(frmProduct.$valid)" ng-disabled="frmProduct.$invalid" />
+        </div>
     </div>
-</div>
+</form>
