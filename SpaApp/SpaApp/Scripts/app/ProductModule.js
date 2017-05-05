@@ -1,4 +1,4 @@
-﻿var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb']);
+﻿var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb', 'angularFileUpload']);
 
 app.factory("ShareData", function () {
     return { value: 0 }
@@ -30,6 +30,11 @@ app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
                         {
                             url: '/Add',
                             templateUrl: 'Product/Add',
+                            ////There is an issue with muliple view
+                            //views: {
+                            //    '': { templateUrl: 'Product/Add' },
+                            //    //'Test': { templateUrl: 'Home/FileUpload' }
+                            //},
                             controller: 'AddProductController',
                             ncyBreadcrumb: {
                                 label: 'Add a Product',

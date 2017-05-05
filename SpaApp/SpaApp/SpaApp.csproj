@@ -184,6 +184,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\FileUploadController.cs" />
     <Compile Include="ApiControllers\HomeApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -232,6 +233,7 @@
     <Content Include="Scripts\app\AddProductController.js" />
     <Content Include="Scripts\app\DeleteProductController.js" />
     <Content Include="Scripts\app\EditProductController.js" />
+    <Content Include="Scripts\app\fileUploadController.js" />
     <Content Include="Scripts\app\ProductModel.js" />
     <Content Include="Scripts\app\ProductModule.js" />
     <Content Include="Scripts\app\Services.js" />
@@ -299,6 +301,7 @@
     <Content Include="Views\Product\_Delete.cshtml" />
     <Content Include="Views\Product\_Home.cshtml" />
     <Content Include="Views\Shared\_BreadCrumb.cshtml" />
+    <Content Include="Views\Shared\_FileUploader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

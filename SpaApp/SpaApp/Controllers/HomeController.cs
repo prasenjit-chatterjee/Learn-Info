@@ -21,5 +21,10 @@ namespace SpaApp.Controllers
         {
             return PartialView("_Manage");
         }
+
+        public ActionResult FileUpload()
+        {
+            return PartialView("_FileUploader");
+        }
     }
 }

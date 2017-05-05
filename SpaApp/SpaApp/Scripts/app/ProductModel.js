@@ -1,6 +1,6 @@
 ﻿var Product = {
     id: 0,
-    name: " ",
+    name: "",
     description: " ",
     quantity: 1,
 
@@ -10,4 +10,6 @@
     quantityRequired: "Product Quantity is required",
     quantityMin: "Product quantity should be greater than 0",
     quantityMax: "Product quantity limit exceeded",
+    
 };
+
