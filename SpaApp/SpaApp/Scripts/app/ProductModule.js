@@ -1,4 +1,5 @@
-﻿var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb', 'angularFileUpload']);
+﻿var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb', 'angularFileUpload', 'FileUploaderWidget']);
+//var app = angular.module('ProductModule', ['ui.router.state', 'ui.router', 'ncy-angular-breadcrumb', 'angularFileUpload']);
 
 app.factory("ShareData", function () {
     return { value: 0 }

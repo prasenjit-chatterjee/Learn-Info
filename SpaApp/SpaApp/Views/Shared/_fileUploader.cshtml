@@ -1,8 +1,8 @@
 ﻿<h4>File Upload</h4>
-<div> @*ng-app='fileUploadApp'>*@
+<div ng-app='FileUploaderWidget'>
     <div ng-controller="fileUploadController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
         <div class="row">
-            <div class="col-md-3">
+            @*<div class="col-md-3">
                 <h3>Select files</h3>
                 <div ng-show="uploader.isHTML5">
                     <div nv-file-drop="" uploader="uploader">
@@ -14,10 +14,11 @@
                 </div>
                 Single
                 <input type="file" nv-file-select="" uploader="uploader" />
-            </div>
+            </div>*@
             <div class="col-md-9" style="margin-bottom: 40px">
-                <h3>Upload queue</h3>
-                <p>Queue length: {{ uploader.queue.length }}</p>
+                <input type="file" nv-file-select="" uploader="uploader" />
+                <h4>Upload queue</h4>
+                <p>Ready to upload: {{ uploader.queue.length }}</p>
                 <table class="table">
                     <thead>
                         <tr>

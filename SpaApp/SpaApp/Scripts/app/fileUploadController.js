@@ -22,8 +22,8 @@
     onCompleteAll: function () { }
 };
 
-
-app.controller('fileUploadController', function ($scope, FileUploader, fileUploadConfig) {
+//app.controller('fileUploadController', function ($scope, FileUploader) {
+angular.module('FileUploaderWidget', ['FileUploaderWidget']).controller('fileUploadController', function ($scope, FileUploader) {
     // Uploader Plugin Code
 
     var uploader = $scope.uploader = new FileUploader({
@@ -84,12 +84,11 @@ app.controller('fileUploadController', function ($scope, FileUploader, fileUploa
         console.info('Files ready for upload.');
         fileUploadConfig.onAfterAddingFile(fileItem);
     };
-
     uploader.onSuccessItem = function (fileItem, response, status, headers) {
-        $scope.uploader.queue = [];
-        $scope.uploader.progress = 0;
+        //$scope.uploader.queue = [];
+        //$scope.uploader.progress = 0;
         console.info('Selected file has been uploaded successfully.');
-        fileUploadConfig.onSuccessItem(fileItem, response, status, headers);
+        //fileUploadConfig.onSuccessItem(fileItem, response, status, headers);
     };
     uploader.onErrorItem = function (fileItem, response, status, headers) {
         console.info('Unable to upload your file. Please try again.');
@@ -113,9 +112,8 @@ app.controller('fileUploadController', function ($scope, FileUploader, fileUploa
     };
     uploader.onProgressAll = function (progress) {
         console.info('onProgressAll', progress);
-        fileUploadConfig.onProgressAll(progress);
+        //fileUploadConfig.onProgressAll(progress);
     };
-
     uploader.onCompleteItem = function (fileItem, response, status, headers) {
         console.info('onCompleteItem', fileItem, response, status, headers);
         fileUploadConfig.onCompleteItem(fileItem, response, status, headers)
@@ -125,5 +123,5 @@ app.controller('fileUploadController', function ($scope, FileUploader, fileUploa
         fileUploadConfig.onCompleteAll();
     };
 
-    console.info('uploader', uploader);
+    //console.info('uploader', uploader);
 });
