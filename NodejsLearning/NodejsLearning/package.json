@@ -1,0 +1,14 @@
+{
+  "name": "Self_learning",
+  "version": "1.0.0",
+  "description": "Target of the app is to learn Node,Express,Angular js",
+  "main": "server.js",
+  "author": {
+    "name": "533972",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.0.1"
+  }
+}
