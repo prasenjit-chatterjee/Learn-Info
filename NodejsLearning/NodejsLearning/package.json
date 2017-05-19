@@ -8,7 +8,9 @@
     "email": ""
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "mongodb": "^2.2.26",
     "socket.io": "^2.0.1"
   }
 }

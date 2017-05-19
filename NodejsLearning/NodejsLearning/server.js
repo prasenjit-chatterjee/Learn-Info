@@ -3,9 +3,11 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var apiUri = '/api/ProductApi';
-//var MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
 //var mongodbUri = "mongodb://prasenjit2564:<PASSWORD>@clustermute-shard-00-00-yrp4u.mongodb.net:27017,clustermute-shard-00-01-yrp4u.mongodb.net:27017,clustermute-shard-00-02-yrp4u.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=ClusterMute-shard-0&authSource=admin";
-
+var productModule = require(__dirname + '/Modules/ProductModule.js');
+var productRepo = require(__dirname + '/Modules/ProductRepo.js');
+//var mongodbUri = "mongodb://localhost/productDb";
 //MongoClient.connect(mongodbUri, function (err, db) {
 //    db.close();
 //});
@@ -29,7 +31,9 @@ io.on('connection', function (socket) {
 
 app.get(apiUri, function (req, res) {
     console.log("Got a GET request for the homepage");
-    res.send('Hello GET');
+    //res.send('Hello GET');
+    var hh = productRepo.FindAll();
+    
 });
 
 app.post(apiUri, function (req, res) {

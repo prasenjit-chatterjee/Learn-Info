@@ -33,6 +33,8 @@
     <Compile Include="Contents\js\bootstrap.js" />
     <Compile Include="Contents\js\bootstrap.min.js" />
     <Compile Include="Contents\js\npm.js" />
+    <Compile Include="Modules\ProductModule.js" />
+    <Compile Include="Modules\ProductRepo.js" />
     <Compile Include="Scripts\angular-breadcrumb.js" />
     <Compile Include="Scripts\Controllers\AddProductController.js" />
     <Compile Include="Scripts\Controllers\DeleteProductController.js" />
@@ -64,6 +66,7 @@
     <Folder Include="Contents\css\" />
     <Folder Include="Contents\fonts\" />
     <Folder Include="Contents\js\" />
+    <Folder Include="Modules\" />
     <Folder Include="Scripts\Models\" />
     <Folder Include="Scripts\Controllers\" />
     <Folder Include="Scripts\Services\" />
