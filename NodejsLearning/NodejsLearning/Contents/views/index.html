@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <base href="/">
+    <!--<base href="http://raspberrypi/zion/">-->
     <title state-title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/bootstrap.css" rel="stylesheet" />
-    <link href="../css/dashboard.css" rel="stylesheet" />
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+    <link href="./css/dashboard.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
     <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-file-upload/2.5.0/angular-file-upload.js"></script>-->
@@ -22,10 +23,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Project name</a>
+                <a class="navbar-brand" href="/">Zion</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Home">Home</a></li>
                     <li><a href="ShowAll">Dashboard</a></li>
                     <li><a href="#">Settings</a></li>
                     <li><a href="#">Profile</a></li>
@@ -40,31 +42,33 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
-                <ul id="messages"></ul>
-
-                <input id="m" autocomplete="off" />
-                <button id="btnSend">Send</button>
-            </div>
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="col-sm-9 col-md-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel card">
+                            <h4 class="padding-left-10px">
+                                <strong>Command Center</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
                 <div ui-view></div>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../angular-breadcrumb.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
-
-    <script src="../Notification.js"></script>
-    <script src="../MainModule.js"></script>
-    <script src="../Services/ProductService.js"></script>
-    <script src="../Services/HomeService.js"></script>
-    <script src="../Controllers/HomeController.js"></script>
-    <script src="../Controllers/AddProductController.js"></script>
-    <script src="../Controllers/DeleteProductController.js"></script>
-    <script src="../Controllers/EditProductController.js"></script>
-    <script src="../Controllers/ShowProductsController.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/angular-breadcrumb.js"></script>
+    <!--<script src="./js/SocketClient.js"></script>-->
+    <script src="./js/MainModule.js"></script>
+    <script src="./js/ProductService.js"></script>
+    <script src="./js/HomeService.js"></script>
+    <script src="./js/HomeController.js"></script>
+    <script src="./js/AddProductController.js"></script>
+    <script src="./js/DeleteProductController.js"></script>
+    <script src="./js/EditProductController.js"></script>
+    <script src="./js/ShowProductsController.js"></script>
 </body>
 </html>

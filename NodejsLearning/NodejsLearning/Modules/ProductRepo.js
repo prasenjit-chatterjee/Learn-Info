@@ -13,16 +13,16 @@ var productRepo = (function () {
         var productList = [];
         try {
             
-            MongoClient.connect(mongodbUri, function (err, db) {
-                var ProductList = db.collection('Products').find({});
-                ProductList.each(function (err, doc) {
-                    if (doc != null) {
-                        productList.push(doc);
-                        console.dir(doc);
-                    }
-                });
-                db.close();
-            });
+            //MongoClient.connect(mongodbUri, function (err, db) {
+            //    var ProductList = db.collection('Products').find({});
+            //    ProductList.each(function (err, doc) {
+            //        if (doc != null) {
+            //            productList.push(doc);
+            //            console.dir(doc);
+            //        }
+            //    });
+            //    db.close();
+            //});
         } catch (e) {
             console.log(e);
         };
