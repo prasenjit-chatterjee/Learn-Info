@@ -1,0 +1,48 @@
+select * from  push_log
+--where guid='608efc2e-40f5-4c34-a3f4-2b48c025448d'
+---where iserrormessage=1 
+where LogTime > convert(datetime,'2017-12-11 00:00:00.000',20)
+order by logtime desc
+
+
+
+Create Project with css anddefault routing
+ng new Angular5Node --style=css --routing
+
+Setup Project
+ng serve
+
+Generate Component
+ng generate component home
+ng g c about
+ng g c new-component --module app
+
+One way biding
+---------------
+interpolation :{{value}}
+Property Binding :[HTML Attribute]="Component Model Item"
+
+Two way biding
+---------------
+model dinding:[(ngModel)]="Component Model Item"
+
+Event Biding : (Event Name)="Component Model Method"
+
+run Angular: ng serve --open
+
+cofigure node with Angular:
+https://scotch.io/tutorials/mean-app-with-angular-2-and-the-angular-cli
+
+https://scotch.io/courses/routing-angular-2-applications
+
+Run app using single command: npm run build
+
+Bootstrap with node and angular: 
+npm install ngx-bootstrap --save
+
+The ActivatedRoute holds information about the route to this instance of the caller component
+
++++++++++++++HELPS+++++++
+https://manage.auth0.com
+https://www.codeproject.com/Articles/1203649/MEAN-Stack-with-Angular-Auth-Auth-JWT-Authoriza
++++++++++++++HELPS+++++++
