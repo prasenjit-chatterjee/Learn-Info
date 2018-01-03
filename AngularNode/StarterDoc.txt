@@ -45,4 +45,5 @@ The ActivatedRoute holds information about the route to this instance of the cal
 +++++++++++++HELPS+++++++
 https://manage.auth0.com
 https://www.codeproject.com/Articles/1203649/MEAN-Stack-with-Angular-Auth-Auth-JWT-Authoriza
+https://tutorialedge.net/typescript/angular/angular-websockets-tutorial/
 +++++++++++++HELPS+++++++

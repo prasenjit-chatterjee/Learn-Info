@@ -5,11 +5,12 @@ import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import { AuthHttp } from "angular2-jwt";
 
 @Injectable()
 export class UserService {
   users: IUser[];
-  constructor(private _http: Http) { }
+  constructor(private _http: AuthHttp) { }
   get(): Observable<any> {
        let url="/api/users";
       return this._http.get(url)
