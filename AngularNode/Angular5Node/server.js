@@ -77,18 +77,17 @@ var connections = [];
 
 wsServer.on('request', function (request) {
   var connection = request.accept(null, request.origin);
-  console.log("ws server started")
+  console.log("ws server connected ");
   connections.push(connection);
-  // This is the most important callback for us, we'll handle
+
   // all messages from users here.
   connection.on('message', function (message) {
     if (message.type === 'utf8') {
-      for (i = 0; i < 10; i++) {
-        connection.sendUTF(
-          JSON.stringify({ type: 'history', data: 'history' })
-        );
-      }
+      connection.sendUTF(
+        JSON.stringify({ type: 'history', data: 'history' })
+      );
     }
+    Broadcast(JSON.stringify({ type: 'history', data: 'Another User Connected' }));
   });
 
   connection.on('close', function (connection) {
